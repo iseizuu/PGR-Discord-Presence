@@ -13,7 +13,7 @@ Discord Rich Presence for Punishing Gray Raven
 
 ## How To Install
 
-- Donwload `setup` from [Release]()
+- Donwload `setup` from [Release](https://github.com/iseizuu/PGR-Discord-Presence/releases)
 - Run and install the installer
 - Run `pgr-setup` and locate the pgr folder
 - After setup the path, you will see `PGR-RPC` shorcut

@@ -25,7 +25,11 @@ nb: app will not shown, but you can check `tray icon` to open settings menu.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Logo](https://cdn.discordapp.com/attachments/718032929825226884/1213561593355440238/rpc.png?ex=65f5ec4e&is=65e3774e&hm=5a616b51ce695d931fa9f1d26a22baed7032a9cd79cd5def3c9e375fe7be2fcb&)
+
+![Logo](https://cdn.discordapp.com/attachments/718032929825226884/1213562054036693042/image.png?ex=65f5ecbc&is=65e377bc&hm=33f7ebee366249ef3c81230d5b51a05d21be8e5798a101f4f8244eeb87553d51&)
+
+
 
 
 ## FAQ

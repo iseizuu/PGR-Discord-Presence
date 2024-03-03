@@ -37,7 +37,7 @@ nb: app will not shown, but you can check `tray icon` to open settings menu.
 #### 1. Why this app detected as virus?
 
 I don't know how to fix it, but trust me this program is safe, you can review the code to make sure.
-#### 2. Why Required Administrator?
+#### 2. Its safe?
 
-because some condition, when user install path in `C://` directory, this app can't edit file, and this app will running the launcher.exe which mean need to run as admin.
+Yes.
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Windows.Forms;
+using XMLReader;
 using XMLReader.Helpers;
 
 namespace Discord_RPC.GUI
@@ -15,6 +16,17 @@ namespace Discord_RPC.GUI
             textBox1.ReadOnly = true;
             textBox1.AppendText(xml.ReadSettings().appPath);
             testerLabel.Text = "1. Runecy\n2. Wege";
+            launcherMsg.AppendText(xml.ReadSettings().inLauncherMessage);
+            gameMsg.AppendText(xml.ReadSettings().inGameMessage);
+        }
+
+        private void SaveSettings()
+        {
+            XmlSettings settings = new XmlSettings();
+            settings.appPath = textBox1.Text.ToString();
+            settings.inLauncherMessage = launcherMsg.Text.ToString();
+            settings.inGameMessage = gameMsg.Text.ToString();
+            xml.SaveToXml(settings);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -49,42 +61,27 @@ namespace Discord_RPC.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
-            {
-                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string selectedFolder = folderBrowserDialog.SelectedPath;
-                    using (OpenFileDialog openFileDialog = new OpenFileDialog())
-                    {
-                        openFileDialog.InitialDirectory = selectedFolder;
-                        openFileDialog.Filter = "Executable Files|*.exe";
-                        openFileDialog.Title = "Choose launcher.exe";
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
-                        if (openFileDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            string selectedFilePath = openFileDialog.FileName;
-                            string fileName = xml.GetFileNameFromPath(selectedFilePath);
-                            if (fileName != "launcher.exe")
-                            {
-                                MessageBox.Show("Weird, seems like this exe is not launcher.exe \nPlease try again!!", "Incorrect Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                            else
-                            {
-                                save(selectedFilePath);
-                            }
-                        }
-                    }
-                }
+            openFileDialog.Title = "Choose launcher.exe";
+            openFileDialog.Filter = "Executable Files|launcher.exe";
+            openFileDialog.CheckFileExists = true;
+
+            DialogResult result = openFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                string selectedFilePath = openFileDialog.FileName;
+                savePath(selectedFilePath);
             }
         }
 
-        private void save(string path)
+        private void savePath(string path)
         {
             MessageBox.Show($"Path file .exe: {path}");
             textBox1.ResetText();
             textBox1.AppendText($"{path}");
             warning.Text = "Path Update: make sure that is correct path";
-            xml.SaveToXml(path);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -115,6 +112,29 @@ namespace Discord_RPC.GUI
         private void testerLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void launcherMsg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(launcherMsg.Text.ToString()) || string.IsNullOrEmpty(gameMsg.Text.ToString()))
+            {
+                MessageBox.Show("Form can't be blank");
+            }
+            else
+            {
+                MessageBox.Show("Saved", "Data Update!");
+                SaveSettings();
+            }
         }
     }
 }

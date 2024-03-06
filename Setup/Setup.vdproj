@@ -368,7 +368,7 @@
         "UpgradeCode" = "8:{442D99FE-7EC0-48E4-B4EC-9394A11EC00E}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
@@ -899,7 +899,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9E00E01917B3480E8D2944BFFFBF28B3"
             {
-            "SourcePath" = "8:..\\DRPC-PGR\\obj\\Release\\DRPC-PGR.exe"
+            "SourcePath" = "8:..\\DRPC-PGR\\obj\\Debug\\DRPC-PGR.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3423BD28FB624751AFDE5F4A48549151"

@@ -5,6 +5,7 @@ namespace XMLReader
 {
     public static class XMLParser
     {
+
         public static XmlDocument LoadDocument(string path)
         {
             if (!File.Exists(path))
@@ -15,6 +16,7 @@ namespace XMLReader
             d.Load(path);
             return d;
         }
+
         public static string[] FindByTag(string NodeName, XmlDocument document)
         {
             XmlNodeList tags = document.GetElementsByTagName(@NodeName);
@@ -37,10 +39,12 @@ namespace XMLReader
             }
         }
     }
+
     public struct XmlSettings
     {
         public string appPath { get; set; }
-        public string ExePath { get; set; }
+        public string inLauncherMessage { get; set; }
         public string NoNameMessage { get; set; }
+        public string inGameMessage { get; set; }
     }
 }

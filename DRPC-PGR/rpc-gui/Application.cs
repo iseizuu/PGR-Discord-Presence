@@ -84,12 +84,12 @@ namespace PGRRPC
                 Thread.Sleep(8000);
                 if (findApp() == "PGR")
                 {
-                    RPC.Details = "In Game";
+                    RPC.Details = xml.ReadSettings().inGameMessage;
                     client.SetPresence(RPC);
                 }
                 else if (findApp() == "Punishing Gray Raven")
                 {
-                    RPC.Details = "In Launcher";
+                    RPC.Details = xml.ReadSettings().inLauncherMessage;
                     client.SetPresence(RPC);
                 }
                 else if (int.Parse(findApp()) == 0)

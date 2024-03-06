@@ -34,8 +34,13 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.path = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelVersion = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.gameMsg = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.launcherMsg = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.warning = new System.Windows.Forms.Label();
+            this.labelVersion = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -109,8 +114,13 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.labelVersion);
+            this.panel1.Controls.Add(this.saveButton);
+            this.panel1.Controls.Add(this.gameMsg);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.launcherMsg);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.warning);
+            this.panel1.Controls.Add(this.labelVersion);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.path);
@@ -120,15 +130,56 @@
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // labelVersion
+            // saveButton
             // 
-            this.labelVersion.AutoSize = true;
-            this.labelVersion.Font = new System.Drawing.Font("Times New Roman", 9F);
-            this.labelVersion.Location = new System.Drawing.Point(4, 245);
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(0, 15);
-            this.labelVersion.TabIndex = 7;
-            this.labelVersion.Click += new System.EventHandler(this.label3_Click_2);
+            this.saveButton.BackColor = System.Drawing.Color.Transparent;
+            this.saveButton.Font = new System.Drawing.Font("HYWenHei-85W", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.ForeColor = System.Drawing.Color.Red;
+            this.saveButton.Location = new System.Drawing.Point(60, 201);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(270, 37);
+            this.saveButton.TabIndex = 12;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // gameMsg
+            // 
+            this.gameMsg.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.gameMsg.Location = new System.Drawing.Point(60, 151);
+            this.gameMsg.Name = "gameMsg";
+            this.gameMsg.Size = new System.Drawing.Size(270, 21);
+            this.gameMsg.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("HYWenHei-85W", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "In Game Message";
+            // 
+            // launcherMsg
+            // 
+            this.launcherMsg.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.launcherMsg.Location = new System.Drawing.Point(60, 98);
+            this.launcherMsg.Name = "launcherMsg";
+            this.launcherMsg.Size = new System.Drawing.Size(270, 21);
+            this.launcherMsg.TabIndex = 9;
+            this.launcherMsg.TextChanged += new System.EventHandler(this.launcherMsg_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("HYWenHei-85W", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Launcher Message";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // warning
             // 
@@ -140,6 +191,16 @@
             this.warning.TabIndex = 6;
             this.warning.Text = "⚠: launcher path";
             this.warning.Click += new System.EventHandler(this.label3_Click_1);
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.Font = new System.Drawing.Font("Times New Roman", 9F);
+            this.labelVersion.Location = new System.Drawing.Point(4, 244);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(0, 15);
+            this.labelVersion.TabIndex = 7;
+            this.labelVersion.Click += new System.EventHandler(this.label3_Click_2);
             // 
             // button1
             // 
@@ -249,5 +310,10 @@
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label testerLabel;
+        private System.Windows.Forms.TextBox launcherMsg;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox gameMsg;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button saveButton;
     }
 }
